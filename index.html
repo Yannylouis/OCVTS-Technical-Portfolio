@@ -338,6 +338,109 @@
 </section>
 
 
+
+
+
+
+<!--Chapter 7-->
+<section id="contact">
+    <h2> Contact Me </h2>
+    <form action="#" method="post">
+        <!--Form fields go here-->
+        <input type="text" name="name" placeholder="Yanny Louis" autocomplete="name" required>
+        <input type="email" name="email" placeholder="Louiskristy218@gmail.com" autocomplete="email" required>
+        <textarea name="message" rows="5" placeholder="Your Message"></textarea>
+        <input type="hidden" name="timestamp" value="2026-10-08T17:00:00">
+          <!-- Project Type -->
+
+    <fieldset>
+
+        <legend>Project Information</legend>
+
+
+
+        <label for="projectType">Project Type:</label>
+
+        <select name="projectType" id="projectType">
+
+            <option value="Website" selected>Website</option>
+
+            <option value="Web App">Web App</option>
+
+            <option value="Portfolio">Portfolio</option>
+
+            <option value="Other">Other</option>
+
+        </select>
+
+        <!-- Budget -->
+
+        <input type="radio" id="budget1" name="budget" value="$1k-$5k">
+
+        <label for="budget1">$1k-$5k</label>
+
+
+        <input type="radio" id="budget2" name="budget" value="$5k-$15k">
+
+        <label for="budget2">$5k-$15k</label>
+
+
+        <input type="radio" id="budget3" name="budget" value="$15k+">
+
+        <label for="budget3">$15k+</label>
+
+
+        <!-- Newsletter -->
+
+        <input type="checkbox" id="newsletter" name="newsletter">
+
+        <label for="newsletter">Subscribe to updates</label>
+
+
+
+    </fieldset>
+
+    <label for="referral">How did you hear about me?</label>
+
+    <input list="referral-options" id="referral" name="referral">
+
+
+
+    <datalist id="referral-options">
+
+        <option value="Google">
+
+        <option value="Friend">
+
+        <option value="Social Media">
+
+        <option value="School">
+
+        <option value="Other">
+
+    </datalist>
+    
+     <button type="submit" id="submitButton">Send Message 🚀 </button>
+     <button type="button" id="clearButton"> Clear Form</button>
+     <button type="button" onclick="window.print()"> Print </button>
+     <output id="confirmation"></output>
+    </form>
+
+    <script>
+        const form = document.querySelector("form");
+const submitButton = document.getElementById("submitButton");
+const confirmation = document.getElementById("confirmation");
+
+form.addEventListener("submit", function(event) {
+event.preventDefault();
+confirmation.textContent = "Your message has been submitted!";
+submitButton.disabled = true;
+});
+</script>
+
+</section>
+
+
 </html>
 
 
