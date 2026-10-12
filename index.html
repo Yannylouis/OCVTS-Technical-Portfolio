@@ -334,7 +334,7 @@
 <div class="project-card">
 <figure>
 <img src="images/project1.jpg"
-alt="Screenshot of my first web project"
+alt="Screenshot of my portfolio website"
 width="300"
 height="200"
 loading="lazy"
@@ -342,28 +342,28 @@ onerror="this.insertAdjacentText('afterend', ' Image failed to load.');">
 <figcaption>My First Web Project</figcaption>
 </figure>
 </div>
-
+<!--project 2-->
 <div class="project-card">
 <figure>
 <img src="images/project2.jpg"
-alt="Screenshot of my portfolio website"
+alt="Screenshot of my favorite hub website"
 width="300"
 height="200"
 loading="lazy"
 onerror="this.insertAdjacentText('afterend', ' Image failed to load.');">
-<figcaption>Portfolio Website</figcaption>
+<figcaption>My Favorite Hub</figcaption>
 </figure>
 </div>
-
+<!--project 3-->
 <div class="project-card">
 <figure>
 <img src="images/project3.jpg"
-alt="Screenshot of my coding project"
+alt="Screenshot of my event registration page"
 width="300"
 height="200"
 loading="lazy"
 onerror="this.insertAdjacentText('afterend', ' Image failed to load.');">
-<figcaption>Coding Project</figcaption>
+<figcaption>Event Registration Page</figcaption>
 </figure>
 </div>
 
@@ -373,22 +373,17 @@ onerror="this.insertAdjacentText('afterend', ' Image failed to load.');">
 ...
 </table>
 </section>
+
 <section id="about">
+    <!--Media embed goes here -->
 
 <div class="video-container">
 
-<video id="myVideo"
-width="320"
-controls
-poster="images/video-poster.jpg">
+<video id="myVideo" width="320" controls poster="images/video-poster.jpg">
 
 <source src="video.mp4" type="video/mp4">
 
-<track src="subtitles.vtt"
-kind="subtitles"
-srclang="en"
-label="English"
-default>
+<track src="subtitles.vtt" kind="subtitles" srclang="en" label="English" default>
 
 Sorry, your browser does not support HTML5 video.
 </video>
@@ -496,10 +491,19 @@ event.preventDefault();
 confirmation.textContent = "Your message has been submitted!";
 submitButton.disabled = true;
 });
+
+
+function playVideo() {
+const video = document.getElementById("myVideo");
+const overlay = document.getElementById("playOverlay");
+
+video.play();
+overlay.style.display = "none";
+}
 </script>
 
 </section>
-
+</body>
 
 </html>
 
