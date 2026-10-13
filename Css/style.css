@@ -1,1 +1,55 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+:root{
+    --background-color: #f8facf;
+    --color:#1e293b;
+    --main-color: #6366f1;
+    --primary:#6366f1;
+}
+
 blockquote{border-left: 4px solid #ccc; padding-left: 10px; margin-left: 0;}
+body{
+    background-color: var(--bacground-color);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+}
+    h1{
+        color: #2563eb;
+        font-size: 2.5rem;
+    }
+    h2{
+        color: #1e40af;
+        margin-bottom: 20px;
+    }
+    h3{
+        color: #475569;
+        font-weight: 600;
+    }
+    :is(h1,h2,h3) {
+        font-family: 'Poppins',sans-serif;
+    }
+    a{
+        color: var(--primary)
+        text-decoration: none;
+        transition: color 0.3 ease;
+        
+    }
+
+    a:hover{
+        color: #f59e0b;
+        text-decoration: underline;
+    }
+
+    a:visited{
+        color: #d97706;
+
+    }
+    a:focus{
+        outline: 2px solid #6366f1;
+    }
+
+    a:active{
+        color: #f59e0b;
+
+    }
+
