@@ -1,3 +1,4 @@
+/*Style.CSS*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 :root{
     --background-color: #f8facf;
@@ -7,6 +8,9 @@
 }
 
 blockquote{border-left: 4px solid #ccc; padding-left: 10px; margin-left: 0;}
+
+/*Chapter 8*/
+
 body{
     background-color: var(--bacground-color);
     color: var(--text-color);
@@ -53,6 +57,9 @@ body{
         color: #f59e0b;
 
     }
+    
+/*Chapter 9*/
+
     section{
         padding: 60px 0;
         margin-bottom: 0;
