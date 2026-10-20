@@ -1,4 +1,9 @@
 /*Style.CSS*/
+@font-face {
+    font-family:'Asap Sharp';
+    src: url('fonts/AsapSharp-VariableFont_wdth,wght.ttf') format('truetype');
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 :root{
     --background-color: #f8facf;
@@ -117,6 +122,61 @@ body{
         margin: 0 auto;
         padding: 0 20px;
     }
+/*Chapter 10*/
+body{
+    font-family: 'Asap Sharp', sans-serif;
+}
+h1,h2,h3,{
+    font-family:'Georgia', 'Times New Roman',serif;
+}
+code, pre{
+    font-family: 'Courier New', monospace;
+}
+input,textarea,select,button{
+    font-family: inherit;
+}
+
+html{
+    font-size: 62.5%;
+}
+h1{
+    font-size: clamp(2rem,5vw,3rem);
+}
+h2{
+    font-size: 2rem;
+}
+p{
+    font-size: 1rem;
+}
+.tagline{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+nav a{
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+blockquote{
+    font-style: italic;
+    line-height: 1.8;
+}
+body{
+    line-height: 1.6;
+}
+h1{
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    text-align: center;
+}
+header{
+    text-align: center;
+}
+.bio p{
+    text-align: justify;
+}
+
+
+
+
     
     
 
