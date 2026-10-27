@@ -330,6 +330,41 @@ nav{
     background-color: #d97706;
 
 }
+/*Chapter 14*/
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+nav li{
+    list-style: none;
+    align-items: center;
+}
+.project-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 30px;
+}
+.skills-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+@media(max-width:600px){
+    .skills-list{
+        gap:8px
+    }
+    .skill-item{
+        padding: 6px 10px;
+    }
+    .timeline{
+        padding-left: 15px;
+    }
+}
+
 
 
 
