@@ -523,15 +523,6 @@ overlay.style.display = "none";
 <table>
 <tbody id="projectTableBody">
 <!-- project rows -->
- <tr class="project-card" data-category="web">
-    <td>Portfolio Website</td>
- </tr>
- <tr class="project-card" data-category="app">
-    <td>My Favorite Hub</td>
- </tr>
- <tr class="project-card" data-category="web">
-    <td>Event Registration Page</td>
- </tr>
 </tbody>
 </table>
 <form onsubmit="return validateForm()">
@@ -549,6 +540,7 @@ overlay.style.display = "none";
 <option value="web">Web</option>
 <option value="app">App</option>
 </select>
+<div id="projectsContainer"></div>
 
 <footer>
     <p>&copy;<span id="year"></span> Yanny Louis</p>
@@ -556,6 +548,71 @@ overlay.style.display = "none";
 
 
 <script>
+    const projects = [
+    {
+        title: "Portfolio Website",
+        tech: "HTML, CSS, JavaScript",
+        image: "images/portfolio.png",
+        description: "My personal portfolio website.",
+        featured: true,
+        category: "web",
+        year: 2026
+    },
+    {
+        title: "My Favorite Hub",
+        tech: "HTML, CSS",
+        image: "images/hub.png",
+        description: "A website showcasing my favorite things.",
+        featured: false,
+        category: "app",
+        year: 2026
+    },
+    {
+        title: "Event Registration Page",
+        tech: "HTML, CSS, JavaScript",
+        image: "images/event.png",
+        description: "An event registration website.",
+        featured: true,
+        category: "web",
+        year: 2026
+    }
+];
+
+console.log(projects);
+
+console.log(projects[1].title);
+
+const skills = {
+    frontend: ["HTML", "CSS", "JavaScript"],
+    backend: ["Node.js", "Python"],
+    tools: ["Git", "GitHub", "VS Code"]
+};
+
+console.log(skills);
+
+console.log(skills.frontend.length);
+
+skills.backend.push("Java");
+
+const projectsContainer = document.getElementById("projectsContainer");
+
+projects.forEach(project => {
+    const card = document.createElement("div");
+
+    card.className = "project-card";
+
+    card.setAttribute("data-category", project.category);
+
+    card.innerHTML = `
+        <h3>${project.title}</h3>
+        <p>${project.tech}</p>
+        <img src="${project.image}" alt="${project.title}">
+        <p>${project.description}</p>
+        ${project.featured ? '<span class="badge">Featured</span>' : ''}
+    `;
+
+    projectsContainer.appendChild(card);
+});
     let isDark = false;
     function toggleTheme() {
         isDark = !isDark;
@@ -604,15 +661,15 @@ overlay.style.display = "none";
     }
     document.getElementById("expYears").textContent = calculateExperience(2024);
     function updateProjectCount() {
-        const rows= document.querySelectorAll("#projectTableBody tr");
-        const count=rows.length;
+        const cards= document.querySelectorAll("#projectsContainer .project-card");
+        const count=cards.length;
         document.getElementById("projectCount").textContent = "Total Projects:" + count;
         console.log("Total Projects: ",count);
     }
     updateProjectCount();
     const projectObserver = new MutationObserver(updateProjectCount);
     projectObserver.observe(
-        document.getElementById("projectTableBody"), 
+        document.getElementById("projectsContainer"), 
         { childList: true }
     );
     function validateForm() {
@@ -626,7 +683,7 @@ overlay.style.display = "none";
         return false;
     }
     function filterProjects(category) {
-    const projects = document.querySelectorAll(".project-card");
+    const projects = document.querySelectorAll("#projectsContainer .project-card");
 
     switch (category) {
         case "web":
