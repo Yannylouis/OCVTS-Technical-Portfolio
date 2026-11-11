@@ -479,7 +479,7 @@ Sorry, your browser does not support HTML5 video.
     
      <button type="submit" id="submitButton">Send Message 🚀 </button>
      <button type="button" id="clearButton"> Clear Form</button>
-     <button type="button" onclick="window.print()"> Print </button>
+     <button type="button" onclick="printPage()"> Print </button>
      <output id="confirmation"></output>
     </form>
 
@@ -515,6 +515,40 @@ overlay.style.display = "none";
 </div>
 
 <button id="backToTop">&#8679</button>
+<button type="button" onclick="sayHello()">Click Me</button>
+<button type="button" onclick="printPage()">Print Page</button>
+<button type="button" onclick="console.clear()">Clear Console</button>
+<footer>
+    <p>&copy;<span id="year"></span> Yanny Louis</p>
+</footer>
+
+
+<script>
+    console.log("Welcome to Yanny Louis's Portfolio!");
+    console.warn("This is a work in progress. Please check back later for updates.");
+    console.table([
+        { Name: "Yanny Louis", Role: "Software Developer", Location: "New Jersey" },
+        { Name: "Portfolio Website", Status: "Completed", Year: 2026 },
+        { Name: "My Favorite Hub", Status: "Completed", Year: 2026 },
+        { Name: "Event Registration Page", Status: "Completed", Year: 2026 }
+    ]);
+    console.time("Page Load Time");
+    window.addEventListener("load", function() {
+        console.timeEnd("Page Load Time");
+    });
+    function getCurrentYear() {
+        const currentDate = new Date();
+        return currentDate.getFullYear();
+    }
+    document.getElementById("year").textContent = getCurrentYear();
+    function sayHello() {
+        alert("Thanks for visiting.");
+    }
+    function printPage() {
+        window.print();
+    }
+</script>
+
 
 
 
