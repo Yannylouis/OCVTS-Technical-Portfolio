@@ -509,7 +509,7 @@ overlay.style.display = "none";
 </body>
 
 <!--Chapter 13 -->
-<div class="project-card">
+<div class="project-card" data-category="web">
     <span class="badge">Featured</span>
     <!--Card Content -->
 </div>
@@ -523,13 +523,13 @@ overlay.style.display = "none";
 <table>
 <tbody id="projectTableBody">
 <!-- project rows -->
- <tr>
+ <tr class="project-card" data-category="web">
     <td>Portfolio Website</td>
  </tr>
- <tr>
+ <tr class="project-card" data-category="app">
     <td>My Favorite Hub</td>
  </tr>
- <tr>
+ <tr class="project-card" data-category="web">
     <td>Event Registration Page</td>
  </tr>
 </tbody>
@@ -539,6 +539,16 @@ overlay.style.display = "none";
     <input type="email" id="email" placeholder="Your Email">
     <button type="submit">Send Message</button>
 </form>
+<button onclick="toggleTheme()">Toggle Theme</button>
+<ul id="skillsList">
+<li>HTML</li>
+<li>CSS</li>
+</ul>
+<select onchange="filterProjects(this.value)">
+<option value="all">All</option>
+<option value="web">Web</option>
+<option value="app">App</option>
+</select>
 
 <footer>
     <p>&copy;<span id="year"></span> Yanny Louis</p>
@@ -546,6 +556,25 @@ overlay.style.display = "none";
 
 
 <script>
+    let isDark = false;
+    function toggleTheme() {
+        isDark = !isDark;
+        if (isDark) {
+            document.body.style.backgroundColor = '#1e293b';
+            document.body.style.color = '#f8fafc';
+        } else {
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
+        }
+    }
+    const extraSkills = ["JavaScript", "React", "Node.js",
+"Git"];
+    const skillsList = document.getElementById("skillsList");
+    for (let i = 0; i < extraSkills.length; i++) {
+        const li = document.createElement("li");
+        li.textContent = extraSkills[i];
+        skillsList.appendChild(li);
+    }
     console.log("Welcome to Yanny Louis's Portfolio!");
     console.warn("This is a work in progress. Please check back later for updates.");
     console.table([
@@ -596,6 +625,36 @@ overlay.style.display = "none";
         alert("Message Sent!");
         return false;
     }
+    function filterProjects(category) {
+    const projects = document.querySelectorAll(".project-card");
+
+    switch (category) {
+        case "web":
+            projects.forEach(project => {
+                project.style.display =
+                    project.dataset.category === "web" ? "block" : "none";
+            });
+            break;
+
+        case "app":
+            projects.forEach(project => {
+                project.style.display =
+                    project.dataset.category === "app" ? "block" : "none";
+            });
+            break;
+
+        case "all":
+            projects.forEach(project => {
+                project.style.display = "block";
+            });
+            break;
+
+        default:
+            projects.forEach(project => {
+                project.style.display = "block";
+            });
+    }
+}
 </script>
 
 
