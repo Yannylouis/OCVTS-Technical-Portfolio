@@ -518,6 +518,28 @@ overlay.style.display = "none";
 <button type="button" onclick="sayHello()">Click Me</button>
 <button type="button" onclick="printPage()">Print Page</button>
 <button type="button" onclick="console.clear()">Clear Console</button>
+<p>Experience: <span id="expYears">0</span>+ years</p>
+<p id="projectCount"></p>
+<table>
+<tbody id="projectTableBody">
+<!-- project rows -->
+ <tr>
+    <td>Portfolio Website</td>
+ </tr>
+ <tr>
+    <td>My Favorite Hub</td>
+ </tr>
+ <tr>
+    <td>Event Registration Page</td>
+ </tr>
+</tbody>
+</table>
+<form onsubmit="return validateForm()">
+    <input type="text" id="name"  placeholder="Your Name">
+    <input type="email" id="email" placeholder="Your Email">
+    <button type="submit">Send Message</button>
+</form>
+
 <footer>
     <p>&copy;<span id="year"></span> Yanny Louis</p>
 </footer>
@@ -546,6 +568,33 @@ overlay.style.display = "none";
     }
     function printPage() {
         window.print();
+    }
+    function calculateExperience(startYear) {
+        const currentYear = new Date().getFullYear();
+        return currentYear - startYear;
+    }
+    document.getElementById("expYears").textContent = calculateExperience(2024);
+    function updateProjectCount() {
+        const rows= document.querySelectorAll("#projectTableBody tr");
+        const count=rows.length;
+        document.getElementById("projectCount").textContent = "Total Projects:" + count;
+        console.log("Total Projects: ",count);
+    }
+    updateProjectCount();
+    const projectObserver = new MutationObserver(updateProjectCount);
+    projectObserver.observe(
+        document.getElementById("projectTableBody"), 
+        { childList: true }
+    );
+    function validateForm() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        if (name === "" || email === "") {
+            alert("Please fill in all fields.");
+            return false;
+        }
+        alert("Message Sent!");
+        return false;
     }
 </script>
 
