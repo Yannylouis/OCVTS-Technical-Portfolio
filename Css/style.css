@@ -364,6 +364,10 @@ nav li{
         padding-left: 15px;
     }
 }
+.dark-theme{
+    background-color: #1e293b;
+    color:#f8facf
+}
 
 
 
