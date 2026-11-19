@@ -368,6 +368,171 @@ nav li{
     background-color: #1e293b;
     color:#f8facf
 }
+#visit-tip {
+    font-size: 18px;
+    color: #6a5acd;
+    font-weight: bold;
+}
+
+#countdown {
+    color: red;
+    font-weight: bold;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Prevent headings from hiding under sticky navigation */
+section {
+    scroll-margin-top: 100px;
+}
+
+/* Navigation */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    padding: 15px;
+}
+
+nav a {
+    margin: 10px;
+    text-decoration: none;
+}
+
+/* Scroll progress bar */
+#progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+}
+
+#progress-bar {
+    height: 8px;
+    width: 0%;
+    background-color: #6a5acd;
+}
+
+/* Hide print-only summary on the screen */
+#print-summary {
+    display: none;
+}
+
+/* Print-specific styles */
+@media print {
+
+    /* Make backgrounds white and text black */
+    body {
+        background-color: white !important;
+        color: black !important;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Hide navigation and buttons */
+    nav,
+    button {
+        display: none !important;
+    }
+
+    /* Show print-only summary */
+    #print-summary {
+        display: block;
+    }
+
+    /* Remove unnecessary backgrounds */
+    * {
+        box-shadow: none !important;
+        background-image: none !important;
+    }
+
+    /* Hide the resume in normal portfolio printing */
+    #resume-print {
+        display: none;
+    }
+
+    /* Special resume printing */
+    body.print-resume * {
+        visibility: hidden;
+    }
+
+    body.print-resume #resume-print,
+    body.print-resume #resume-print * {
+        visibility: visible;
+    }
+
+    body.print-resume #resume-print {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    body.print-resume #print-summary {
+        display: none;
+    }
+}
+#progress-Bar {
+    height: 10px;
+    width: 0%;
+    background-color: blue;
+    transition: width 0.2s;
+}
+
+#message {
+    width: 100%;
+    min-height: 100px;
+}
+
+#submitBtn:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+nav a.active {
+    color: blue;
+    font-weight: bold;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    position: relative;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+nav a.active {
+    color: blue;
+}
+
+.nav-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background-color: blue;
+    transition: all 0.3s ease;
+}
+
 
 
 

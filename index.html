@@ -542,7 +542,7 @@ overlay.style.display = "none";
 <option value="web">Web</option>
 <option value="app">App</option>
 </select>
-<section id="contactSection">
+<section id="contact">
     <!--Contact Section Here-->
 </section>
 <span id="statusCounts"></span>
@@ -551,6 +551,70 @@ overlay.style.display = "none";
 <p>Last Updated: <span id="lastUpdated"></span></p>
 <p id="relativeUpdated"></p>
 <p>Time on site: <span id="timeOnSite">O seconds</span></p>
+
+<!-- Tip of the Visit -->
+<section>
+    <h2>Tip of the Visit</h2>
+    <p id="visit-tip">Explore my portfolio!</p>
+</section>
+
+<!-- Limited Availability Countdown -->
+<section>
+    <h2>Limited Availability</h2>
+    <p>Offer expires in <span id="countdown">60</span> seconds.</p>
+</section>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- Scroll Progress Bar -->
+<div id="progress-container">
+    <div id="progress-bar"></div>
+
+<span class="nav-indicator"></span>
+
+<!-- Print Portfolio Button -->
+<button onclick="printPortfolio()">
+    Print / Save as PDF
+</button>
+
+<!-- Print-only summary -->
+<section id="print-summary">
+    <h2>Portfolio Summary</h2>
+    <p>
+        Welcome to my portfolio! This website showcases
+        my background, skills, and projects.
+    </p>
+</section>
+
+<!-- Download Resume Button -->
+<button onclick="downloadResume()">
+    Download Resume
+</button>
+
+<!-- Resume Content -->
+<section id="resume-print">
+    <h1>My Resume</h1>
+
+    <h2>About Me</h2>
+    <p>Motivated student interested in learning new skills.</p>
+
+    <h2>Skills</h2>
+    <ul>
+        <li>Communication</li>
+        <li>Teamwork</li>
+        <li>Problem-solving</li>
+        <li>HTML, CSS, and JavaScript</li>
+    </ul>
+
+    <h2>Education</h2>
+    <p>High School Student</p>
+</section>
+
 
 <footer>
     <p>&copy;<span id="year"></span> Yanny Louis</p>
